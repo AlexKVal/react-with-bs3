@@ -1,0 +1,8 @@
+#content {
+  margin-top: 10px;
+  width: 250px;
+}
+
+label:hover {
+  background-color: lightgrey;
+}
