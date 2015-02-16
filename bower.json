@@ -1,0 +1,27 @@
+{
+  "name": "react-with-bs3",
+  "version": "0.0.0",
+  "homepage": "https://github.com/AlexKVal/react-with-bs3",
+  "authors": [
+    "AlexKVal <alexkval@gmail.com>"
+  ],
+  "description": "refactoring of react-thinking for use with react-bootstrap",
+  "main": "React-With-BS3",
+  "keywords": [
+    "react",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "react": "~0.12.2"
+  }
+}
