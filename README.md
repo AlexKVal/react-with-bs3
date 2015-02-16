@@ -11,3 +11,6 @@ In console run:
 Result should look like this:
 
 ![](https://raw.githubusercontent.com/AlexKVal/react-thinking/images/images/result.png)
+
+TODO:
+- make the 'Search' field as 'datalist' html5 input
