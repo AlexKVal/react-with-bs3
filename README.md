@@ -1,4 +1,4 @@
-# It's a refactoring of [AlexKVal/react-thinking](https://github.com/AlexKVal/react-thinking/) with React-Bootstrap http://react-bootstrap.github.io/
+#### It's a refactoring of [AlexKVal/react-thinking](https://github.com/AlexKVal/react-thinking/) with React-Bootstrap http://react-bootstrap.github.io/
 
 Result:
 
