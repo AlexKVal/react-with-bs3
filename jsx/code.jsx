@@ -25,7 +25,7 @@ var FilterableProductTable = React.createClass({
   render: function() {
     return (
       <div className="row">
-        <SearchBar
+        <SearchBar products={this.props.products}
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
           filterCallback={this.filterCallback}
@@ -47,11 +47,14 @@ var SearchBar = React.createClass({
     );
   },
   render: function() {
+    var options = this.props.products.map(function(product, index) {
+      return ( <option value={product.name} /> );
+    });
     return (
       <div className="searchBar">
         <form>
           <input
-            type="text"
+            list="productsNamesList"
             placeholder="Search..."
             className="form-control"
             autoFocus
@@ -59,6 +62,9 @@ var SearchBar = React.createClass({
             ref="textInput"
             onChange={this.onInputsChanges}
           />
+          <datalist id="productsNamesList">
+            {options}
+          </datalist>
           <div className="checkbox">
             <label>
               <input
