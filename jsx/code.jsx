@@ -25,7 +25,7 @@ var FilterableProductTable = React.createClass({
   render: function() {
     return (
       <div className="row">
-        <SearchBar products={this.props.products}
+        <SearchBar optionsList={this.props.products.map(function(p){return p.name;})}
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
           filterCallback={this.filterCallback}
@@ -39,32 +39,53 @@ var FilterableProductTable = React.createClass({
   }
 });
 
+var DataListInput = React.createClass({
+  onChange: function(e) {
+    this.value = e.target.value;
+    this.props.onChange(e.target.value);
+  },
+  render: function() {
+    var options = this.props.optionsList.map(function(option) {
+      return ( <option value={option} /> );
+    });
+
+    return (
+    <div className="dataListInput">
+      <input
+        list={this.props.dataListID}
+        placeholder={this.props.placeholder}
+        className="form-control"
+        ref="textInput"
+        onChange={this.onChange}
+      />
+      <datalist id={this.props.dataListID}>
+        {options}
+      </datalist>
+    </div>
+    );
+  }
+});
+
 var SearchBar = React.createClass({
   onInputsChanges: function() {
     this.props.filterCallback(
-      this.refs.textInput.getDOMNode().value,
+      this.refs.dataListInput.value,
       this.refs.checkInput.getDOMNode().checked
     );
   },
   render: function() {
-    var options = this.props.products.map(function(product, index) {
-      return ( <option value={product.name} /> );
-    });
     return (
       <div className="searchBar">
         <form>
-          <input
-            list="productsNamesList"
-            placeholder="Search..."
-            className="form-control"
-            autoFocus
-            value={this.props.filterText}
-            ref="textInput"
+
+          <DataListInput
+            dataListID="productsDataList"
+            optionsList={this.props.optionsList}
+            placeholder="Search.."
+            ref="dataListInput"
             onChange={this.onInputsChanges}
           />
-          <datalist id="productsNamesList">
-            {options}
-          </datalist>
+
           <div className="checkbox">
             <label>
               <input
@@ -75,6 +96,7 @@ var SearchBar = React.createClass({
               /> Only show products in stock
             </label>
           </div>
+
         </form>
       </div>
     );
