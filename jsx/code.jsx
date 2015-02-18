@@ -44,6 +44,12 @@ var DataListInput = React.createClass({
     dataListID: React.PropTypes.string.isRequired,
     optionsList: React.PropTypes.array
   },
+  getDefaultProps: function() {
+    return {
+      dataListID: 'dataListInput',
+      optionsList: []
+    };
+  },
   onChange: function(e) {
     this.value = e.target.value;
     this.props.onChange(e.target.value);
