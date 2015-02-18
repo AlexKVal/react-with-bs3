@@ -40,13 +40,17 @@ var FilterableProductTable = React.createClass({
 });
 
 var DataListInput = React.createClass({
+  propTypes: {
+    dataListID: React.PropTypes.string.isRequired,
+    optionsList: React.PropTypes.array
+  },
   onChange: function(e) {
     this.value = e.target.value;
     this.props.onChange(e.target.value);
   },
   render: function() {
-    var options = this.props.optionsList.map(function(option) {
-      return ( <option value={option} /> );
+    var options = this.props.optionsList.map(function(option, index) {
+      return ( <option key={'key-'+index} value={option} /> );
     });
 
     return (
@@ -55,7 +59,6 @@ var DataListInput = React.createClass({
         list={this.props.dataListID}
         placeholder={this.props.placeholder}
         className="form-control"
-        ref="textInput"
         onChange={this.onChange}
       />
       <datalist id={this.props.dataListID}>
