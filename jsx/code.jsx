@@ -47,7 +47,8 @@ var DataListInput = React.createClass({
   getDefaultProps: function() {
     return {
       dataListID: 'dataListInput',
-      optionsList: []
+      optionsList: [],
+      inputText: ''
     };
   },
   onChange: function(e) {
@@ -65,6 +66,7 @@ var DataListInput = React.createClass({
         list={this.props.dataListID}
         placeholder={this.props.placeholder}
         className="form-control"
+        value={this.props.inputText}
         onChange={this.onChange}
       />
       <datalist id={this.props.dataListID}>
@@ -90,6 +92,7 @@ var SearchBar = React.createClass({
           <DataListInput
             dataListID="productsDataList"
             optionsList={this.props.optionsList}
+            inputText={this.props.filterText}
             placeholder="Search.."
             ref="dataListInput"
             onChange={this.onInputsChanges}
