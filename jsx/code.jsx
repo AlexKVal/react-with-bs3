@@ -47,13 +47,11 @@ var DataListInput = React.createClass({
   getDefaultProps: function() {
     return {
       dataListID: 'dataListInput',
-      optionsList: [],
-      inputText: ''
+      optionsList: []
     };
   },
-  onChange: function(e) {
-    this.value = e.target.value;
-    this.props.onChange(e.target.value);
+  getTextValue: function() {
+    return this.refs.textInput.getDOMNode().value;
   },
   render: function() {
     var options = this.props.optionsList.map(function(option, index) {
@@ -66,8 +64,9 @@ var DataListInput = React.createClass({
         list={this.props.dataListID}
         placeholder={this.props.placeholder}
         className="form-control"
-        value={this.props.inputText}
-        onChange={this.onChange}
+        ref="textInput"
+        defaultValue={this.props.inputText}
+        onChange={this.props.onChange}
       />
       <datalist id={this.props.dataListID}>
         {options}
@@ -80,7 +79,7 @@ var DataListInput = React.createClass({
 var SearchBar = React.createClass({
   onInputsChanges: function() {
     this.props.filterCallback(
-      this.refs.dataListInput.value,
+      this.refs.dataListInput.getTextValue(),
       this.refs.checkInput.getDOMNode().checked
     );
   },
