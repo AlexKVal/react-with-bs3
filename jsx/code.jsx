@@ -8,6 +8,7 @@ var data = [
 ];
 
 var Well = ReactBootstrap.Well;
+var Table = ReactBootstrap.Table;
 
 var FilterableProductTable = React.createClass({
   getInitialState: function() {
@@ -133,12 +134,12 @@ var ProductTable = React.createClass({
     }.bind(this));
 
     return (
-      <table className="table table-striped table-hover">
+      <Table striped hover>
         <thead>
           <tr><th>Name</th><th><span className="pull-right">Price</span></th></tr>
         </thead>
         <tbody>{rows}</tbody>
-      </table>
+      </Table>
     );
   }
 });
