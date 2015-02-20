@@ -26,8 +26,9 @@ var FilterableProductTable = React.createClass({
   },
 
   render: function() {
+    var wellStyles = { margin: 10, width: 270 };
     return (
-      <Well className='main-content'>
+      <Well className='main-content' style={wellStyles}>
         <SearchBar optionsList={this.props.products.map(function(p){return p.name;})}
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
