@@ -6,6 +6,8 @@ In console run:
     $ git clone https://github.com/AlexKVal/react-with-bs3
     $ cd react-with-bs3
     $ bower install
+    $ npm install -g react-tools
+    $ jsx --extension jsx jsx/ build/
     $ python -m SimpleHTTPServer 8000 & open http://localhost:8000
 
 Result should look like this:
