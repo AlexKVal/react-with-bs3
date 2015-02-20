@@ -7,6 +7,8 @@ var data = [
   {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
 ];
 
+var Well = ReactBootstrap.Well;
+
 var FilterableProductTable = React.createClass({
   getInitialState: function() {
     return {
@@ -24,7 +26,7 @@ var FilterableProductTable = React.createClass({
 
   render: function() {
     return (
-      <div className="row">
+      <Well className='main-content'>
         <SearchBar optionsList={this.props.products.map(function(p){return p.name;})}
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
@@ -34,7 +36,7 @@ var FilterableProductTable = React.createClass({
           filterText={this.state.filterText}
           inStockOnly={this.state.inStockOnly}
         />
-      </div>
+      </Well>
     );
   }
 });
@@ -166,5 +168,5 @@ var ProductRow = React.createClass({
 
 React.render(
   <FilterableProductTable products={data} />,
-  document.getElementById('content')
+  document.body
 );
