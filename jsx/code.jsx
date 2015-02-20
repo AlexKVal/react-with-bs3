@@ -56,7 +56,7 @@ var DataListInput = React.createClass({
     };
   },
   getTextValue: function() {
-    return this.refs.textInput.getDOMNode().value;
+    return this.refs.textInput.getValue();
   },
   render: function() {
     var options = this.props.optionsList.map(function(option, index) {
@@ -64,11 +64,11 @@ var DataListInput = React.createClass({
     });
 
     return (
-    <div className="dataListInput">
-      <input
+    <div>
+      <Input
+        type="text"
         list={this.props.dataListID}
         placeholder={this.props.placeholder}
-        className="form-control"
         ref="textInput"
         defaultValue={this.props.inputText}
         onChange={this.props.onChange}
