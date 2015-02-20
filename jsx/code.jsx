@@ -9,6 +9,7 @@ var data = [
 
 var Well = ReactBootstrap.Well;
 var Table = ReactBootstrap.Table;
+var Input = ReactBootstrap.Input;
 
 var FilterableProductTable = React.createClass({
   getInitialState: function() {
@@ -84,7 +85,7 @@ var SearchBar = React.createClass({
   onInputsChanges: function() {
     this.props.filterCallback(
       this.refs.dataListInput.getTextValue(),
-      this.refs.checkInput.getDOMNode().checked
+      this.refs.checkInput.getChecked()
     );
   },
   render: function() {
@@ -101,16 +102,14 @@ var SearchBar = React.createClass({
             onChange={this.onInputsChanges}
           />
 
-          <div className="checkbox">
-            <label>
-              <input
-                type="checkbox"
-                checked={this.props.inStockOnly}
-                ref="checkInput"
-                onChange={this.onInputsChanges}
-              /> Only show products in stock
-            </label>
-          </div>
+          <Input
+            type="checkbox"
+            label="Only show products in stock"
+            checked={this.props.inStockOnly}
+            ref="checkInput"
+            onChange={this.onInputsChanges}
+          />
+
 
         </form>
       </div>
