@@ -23,6 +23,7 @@
   "dependencies": {
     "bootstrap": "~3.3.2",
     "react": "~0.12.2",
-    "react-bootstrap": "~0.15.1"
+    "react-bootstrap": "~0.15.1",
+    "requirejs": "~2.1.16"
   }
 }
