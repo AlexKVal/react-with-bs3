@@ -1,4 +1,8 @@
-var React = require('react');
+define(function (require, exports, module) {
+  var React = require('react');
+  var ReactBootstrap = require('react-bootstrap');
+
+  var Input = ReactBootstrap.Input;
 
 var DataListInput = React.createClass({
   propTypes: {
@@ -38,3 +42,4 @@ var DataListInput = React.createClass({
 });
 
 module.exports = DataListInput;
+});
