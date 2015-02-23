@@ -14,6 +14,7 @@ In console run:
     $ bower install
     $ npm install -g react-tools
     $ jsx --extension jsx jsx/ build/
+    $ node bower_components/r.js/dist/r.js -o build.js
     $ python -m SimpleHTTPServer 8000 & open http://localhost:8000
 
 Result should look like this:

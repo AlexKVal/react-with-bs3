@@ -3,3 +3,4 @@ bower_components
 .DS_Store
 .local
 build
+main-built.js
