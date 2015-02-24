@@ -3,7 +3,7 @@ define(function (require, exports, module) {
   var Input = require('react-bootstrap').Input;
   var DataListInput = require('./DataListInput');
 
-  module.exports = React.createClass({
+  module.exports = React.createClass({displayName: "SearchBar",
     onInputsChanges: function() {
       this.props.filterCallback(
         this.refs.dataListInput.getTextValue(),

@@ -2,7 +2,7 @@ define(function (require, exports, module) {
   var React = require('react');
   var Input = require('react-bootstrap').Input;
 
-  module.exports = React.createClass({
+  module.exports = React.createClass({displayName: "DataListInput",
     propTypes: {
       dataListID: React.PropTypes.string.isRequired,
       optionsList: React.PropTypes.array

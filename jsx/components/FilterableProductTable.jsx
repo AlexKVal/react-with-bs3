@@ -4,7 +4,7 @@ define(function (require, exports, module) {
   var ProductTable = require('./ProductTable');
   var SearchBar = require('./SearchBar');
 
-  module.exports = React.createClass({
+  module.exports = React.createClass({displayName: "FilterableProductTable",
     getInitialState: function() {
       return {
         filterText: '',
@@ -36,5 +36,4 @@ define(function (require, exports, module) {
       );
     }
   });
-
 });

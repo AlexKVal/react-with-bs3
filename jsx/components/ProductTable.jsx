@@ -4,7 +4,7 @@ define(function (require, exports, module) {
   var ProductCategoryRow = require('./ProductCategoryRow');
   var ProductRow = require('./ProductRow');
 
-  module.exports = React.createClass({
+  module.exports = React.createClass({displayName: "ProductTable",
     render: function() {
       var rows = [];
       var lastCategory = null;
