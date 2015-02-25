@@ -27,6 +27,7 @@
     "requirejs": "~2.1.16"
   },
   "devDependencies": {
-    "r.js": "~2.1.16"
+    "r.js": "~2.1.16",
+    "almond": "~0.3.0"
   }
 }
