@@ -9,10 +9,14 @@ define(function (require) {
   ];
 
   var React = require('react');
-  var FilterableProductTable = require('./components/FilterableProductTable');
 
-  React.render(
-    <FilterableProductTable products={data} />,
-    document.body
-  );
+  function App() {
+    this.FilterableProductTable = require('./components/FilterableProductTable');
+  }
+
+  App.prototype.init = function() {
+    React.render( <FilterableProductTable products={data} />, document.body );
+  };
+
+  return App;
 });
