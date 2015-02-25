@@ -6,6 +6,7 @@ Frameworks used:
 - React
 - React-Bootstrap
 - RequireJS
+- Almond
 
 In console run:
 
