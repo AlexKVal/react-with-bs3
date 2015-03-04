@@ -1,10 +1,9 @@
-define(function (require, exports, module) {
-  var React = require('react');
-  var Well = require('react-bootstrap').Well;
-  var ProductTable = require('./ProductTable');
-  var SearchBar = require('./SearchBar');
+define('FilterableProductTable',
+  ['react', 'react-bootstrap', 'jsx!ProductTable', 'jsx!SearchBar'],
+  function (React, ReactBootstrap, ProductTable, SearchBar) {
+  var Well = ReactBootstrap.Well;
 
-  module.exports = React.createClass({displayName: "FilterableProductTable",
+  return React.createClass({displayName: "FilterableProductTable",
     getInitialState: function() {
       return {
         filterText: '',

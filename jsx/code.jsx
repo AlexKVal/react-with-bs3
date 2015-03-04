@@ -1,4 +1,7 @@
-define(function (require) {
+define('app',
+  ['react', 'jsx!FilterableProductTable'],
+  function (React, FilterableProductTable) {
+
   var data = [
     {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
     {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
@@ -8,10 +11,8 @@ define(function (require) {
     {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
   ];
 
-  var React = require('react');
-
   function App() {
-    this.FilterableProductTable = require('./components/FilterableProductTable');
+    this.FilterableProductTable = FilterableProductTable;
   }
 
   App.prototype.init = function() {

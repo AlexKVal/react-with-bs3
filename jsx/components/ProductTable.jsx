@@ -1,8 +1,8 @@
 define(function (require, exports, module) {
   var React = require('react');
   var Table = require('react-bootstrap').Table;
-  var ProductCategoryRow = require('./ProductCategoryRow');
-  var ProductRow = require('./ProductRow');
+  var ProductCategoryRow = require('jsx!ProductCategoryRow');
+  var ProductRow = require('jsx!ProductRow');
 
   module.exports = React.createClass({displayName: "ProductTable",
     render: function() {

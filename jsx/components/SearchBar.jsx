@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
   var React = require('react');
   var Input = require('react-bootstrap').Input;
-  var DataListInput = require('./DataListInput');
+  var DataListInput = require('jsx!DataListInput');
 
   module.exports = React.createClass({displayName: "SearchBar",
     onInputsChanges: function() {
